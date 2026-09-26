@@ -6,5 +6,11 @@ import kotlin.io.path.readText
 import kotlin.io.path.writeText
 
 fun main() {
-    // Add your code here
+    val file = Path("test.txt")
+
+    file.writeText("Hello, World!\n")
+    file.appendText("This line was appended.\n")
+
+    val contents = file.readText()
+    print(contents)
 }
