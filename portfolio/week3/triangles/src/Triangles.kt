@@ -1,0 +1,18 @@
+// COMP2850 Portfolio: Week 3
+// Functions for working with triangle geometry
+
+import kotlin.math.sqrt
+
+typealias Triangle = Triple<Double,Double,Double>
+
+fun isValidTriangle(sides: Triangle): Boolean {
+    val (a, b, c) = sides
+    return a < b + c && b < a + c && c < a + b
+}
+
+fun triangleArea(sides: Triangle): Double {
+    require(isValidTriangle(sides)) { "invalid triangle: $sides" }
+    val (a, b, c) = sides
+    val s = (a + b + c) / 2.0
+    return sqrt(s * (s - a) * (s - b) * (s - c))
+}
