@@ -30,4 +30,8 @@ class MoneyTest : FreeSpec({
     "Exception if cents are greater than 99" {
         shouldThrow<IllegalArgumentException> { Money(0, 100) }
     }
+
+    "€1.50 + €1.00 is €2.50" {
+        Money(1, 50) + Money(1, 0) shouldBe Money(2, 50)
+    }
 })
