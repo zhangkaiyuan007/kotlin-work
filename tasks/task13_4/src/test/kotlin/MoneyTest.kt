@@ -22,4 +22,8 @@ class MoneyTest : FreeSpec({
     "Exception if euros are negative" {
         shouldThrow<IllegalArgumentException> { Money(-1, 0) }
     }
+
+    "Exception if cents are negative" {
+        shouldThrow<IllegalArgumentException> { Money(0, -1) }
+    }
 })
