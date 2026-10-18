@@ -38,4 +38,8 @@ class MoneyTest : FreeSpec({
     "€1.50 + €2.00 is €3.50" {
         Money(1, 50) + Money(2, 0) shouldBe Money(3, 50)
     }
+
+    "€1.50 + €0.01 is €1.51" {
+        Money(1, 50) + Money(0, 1) shouldBe Money(1, 51)
+    }
 })
