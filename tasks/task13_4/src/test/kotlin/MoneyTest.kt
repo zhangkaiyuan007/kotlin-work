@@ -18,4 +18,8 @@ class MoneyTest : FreeSpec({
         withClue("euros") { m.euros shouldBe 2 }
         withClue("cents") { m.cents shouldBe 99 }
     }
+
+    "Exception if euros are negative" {
+        shouldThrow<IllegalArgumentException> { Money(-1, 0) }
+    }
 })
