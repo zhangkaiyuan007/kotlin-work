@@ -9,5 +9,7 @@ import io.kotest.matchers.shouldBe
 class MoneyTest : FreeSpec({
     "Can create a Money" {
         val m = Money(1, 50)
+        withClue("euros") { m.euros shouldBe 1 }
+        withClue("cents") { m.cents shouldBe 50 }
     }
 })
