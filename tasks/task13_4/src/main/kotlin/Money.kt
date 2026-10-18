@@ -1,6 +1,3 @@
 // Task 13.4: Money class
 
-class Money(euros: Int, cents: Int) {
-    val euros = euros
-    val cents = cents
-}
+data class Money(val euros: Int, val cents: Int)
