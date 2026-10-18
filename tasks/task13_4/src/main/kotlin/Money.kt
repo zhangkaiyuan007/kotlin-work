@@ -6,5 +6,5 @@ data class Money(val euros: Int, val cents: Int) {
         require(cents in 0..99) { "Cents must be in the range 0-99" }
     }
 
-    operator fun plus(other: Money) = Money(2, 50)
+    operator fun plus(other: Money) = Money(euros + other.euros, 50)
 }
